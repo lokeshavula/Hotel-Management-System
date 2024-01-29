@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+<title>CodePen - Shopping cart JS</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script><link rel="stylesheet" href="cart.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Nav -->
+<div class="navbar">
+    <a href="home.html">Home</a>
+</div>
+<nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
+<div class="row">
+    <div class="col">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button></div>
+</div>
+
+</nav>
+
+
+<!-- Main -->
+<div class="container">
+<div class="row">
+    <div class="col">
+    <div class="card" style="width: 20rem;">
+<img class="card-img-top" src= "dosa.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Dosa</h4>
+<p class="card-text">Price: 120/-</p>
+<a href="#" data-name="Dosa" data-price="120" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="idlisam.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Idli Sambhar</h4>
+<p class="card-text">Price: 80/-</p>
+<a href="#" data-name="Idli Sambhar" data-price="80" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="masaladosa.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Masala Dosa</h4>
+<p class="card-text">Price: 100/-</p>
+<a href="#" data-name="Masala Dosa" data-price="100" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="cheesedosa.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">cheese Dosa</h4>
+<p class="card-text">Price: 150/-</p>
+<a href="#" data-name="Cheese Dosa" data-price="150" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="onionuttapatam.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Onion Utthapa</h4>
+<p class="card-text">Price: 120/-</p>
+<a href="#" data-name="Onion Utthapa" data-price="120" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="vadasam.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Vada Sambhar</h4>
+<p class="card-text">Price: 80/-</p>
+<a href="#" data-name="Vada Sambhar" data-price="80" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="chillipasta.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Chill Pasta</h4>
+<p class="card-text">Price: 180/-</p>
+<a href="#" data-name="Chilli Pasta" data-price="180" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="burger.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Burger</h4>
+<p class="card-text">Price: 120/-</p>
+<a href="#" data-name="Burger" data-price="120" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="pasta.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Pasta</h4>
+<p class="card-text">Price: 180/-</p>
+<a href="#" data-name="Pasta" data-price="180" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="pizza.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Pizza</h4>
+<p class="card-text">Price: 200/-</p>
+<a href="#" data-name="Pizza" data-price="200" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="risotto.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Risotto</h4>
+<p class="card-text">Price: 200/-</p>
+<a href="#" data-name="Risotto" data-price="200" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="lasange.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Lasanga</h4>
+<p class="card-text">Price: 160/-</p>
+<a href="#" data-name="Lasanga" data-price="160" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="pavbhaji.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Pavbhaji</h4>
+<p class="card-text">Price: 80/-</p>
+<a href="#" data-name="Pavbhaji" data-price="80" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="momos.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Momos</h4>
+<p class="card-text">Price: 120/-</p>
+<a href="#" data-name="Momos" data-price="120" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="sreekhand.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Sreekhand</h4>
+<p class="card-text">Price: 70/-</p>
+<a href="#" data-name="Sreekhand" data-price="70" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="ragadapattice.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Ragadapattice</h4>
+<p class="card-text">Price: 110/-</p>
+<a href="#" data-name="Ragadapattice" data-price="110" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="paneerbuttermasala.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Paneer Butter Masala</h4>
+<p class="card-text">Price: 120/-</p>
+<a href="#" data-name="paneerbuttermasala" data-price="120" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="bhelpuri.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Bhel puri</h4>
+<p class="card-text">Price: 60/-</p>
+<a href="#" data-name="Bhel puri" data-price="60" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="paneertikka.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Paneer Tikka</h4>
+<p class="card-text">Price: 145/-</p>
+<a href="#" data-name="Paneer Tikka" data-price="145" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="aloosamosa.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Aloo Samosa</h4>
+<p class="card-text">Price: 40/-</p>
+<a href="#" data-name="Aloo Samosa" data-price="40" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="cholebhature.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Chole Bhature</h4>
+<p class="card-text">Price: 80/-</p>
+<a href="#" data-name="Chole Bhature" data-price="80" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="kesarlassi.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Kesar Lassi</h4>
+<p class="card-text">Price: 60/-</p>
+<a href="#" data-name="Kesar Lassi" data-price="60" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="tandoorichicken.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Tandoori Chicken</h4>
+<p class="card-text">Price: 240/-</p>
+<a href="#" data-name="Tandoori Chicken" data-price="240" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="dahivada.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Dahi Vada</h4>
+<p class="card-text">Price: 120/-</p>
+<a href="#" data-name="Dahi Vada" data-price="120" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="Schezwannoodles.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Schezwan Noodles</h4>
+<p class="card-text">Price: 140/-</p>
+<a href="#" data-name="Schezwan Noodles" data-price="140" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="Schezwanfriedrice.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Schezwan Friedrice</h4>
+<p class="card-text">Price: 235/-</p>
+<a href="#" data-name="Schezwan Friedrice" data-price="235" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="springrolls.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Spring Rolls</h4>
+<p class="card-text">Price: 125/-</p>
+<a href="#" data-name="Spring Rolls" data-price="125" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="vegmanchurian.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Veg Manchurian</h4>
+<p class="card-text">Price: 110/-</p>
+<a href="#" data-name="Veg Manchurian" data-price="110" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="sweetandsourchicen.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Sweet and Sour Chicken</h4>
+<p class="card-text">Price: 300/-</p>
+<a href="#" data-name="Sweet and Sour Chicken" data-price="300" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="chillichicken.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Chilli Chicken</h4>
+<p class="card-text">Price: 135/-</p>
+<a href="#" data-name="Chilli Chicken" data-price="135" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="falooda.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Falooda</h4>
+<p class="card-text">Price: 100/-</p>
+<a href="#" data-name="Falooda" data-price="100" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="oreomilkshake.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Oreo Milkshake</h4>
+<p class="card-text">Price: 120/-</p>
+<a href="#" data-name="Oreo Milkshake" data-price="120" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="chocomilkshake.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Chocolate Milkshake</h4>
+<p class="card-text">Price: 140/-</p>
+<a href="#" data-name="Chocolate Milkshake" data-price="140" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="chocolatechip.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Chocolate Chip Icecream</h4>
+<p class="card-text">Price: 160/-</p>
+<a href="#" data-name="chocolatechip Icecream" data-price="160" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="vanillaicecream.jpeg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Vanilla Icecream</h4>
+<p class="card-text">Price: 70/-</p>
+<a href="#" data-name="Vanilla Icecream" data-price="70" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card" style="width: 20rem;">
+<img class="card-img-top" src="gelato.jpg" alt="Card image cap">
+<div class="card-block">
+<h4 class="card-title">Strawberry Gelato</h4>
+<p class="card-text">Price: 120/-</p>
+<a href="#" data-name="Strawberry Gelato" data-price="120" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+    <table class="show-cart table">
+        
+    </table>
+    <div>Total price: $<span class="total-cart"></span></div>
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-secondary"><a href="payment.html">Order now</a></button>
+    </div>
+</div>
+</div>
+</div>
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="cart.js"></script>
+
+</body>
+</html>
